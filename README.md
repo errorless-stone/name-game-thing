@@ -1,3 +1,2 @@
-# Quebec
-
-forked my own branch and followed video.
+# Name Game 
+https://name-game-gang.onrender.com
