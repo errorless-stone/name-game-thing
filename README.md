@@ -1,1 +1,3 @@
-# name-game-thing
+# Quebec
+
+forked my own branch and followed video.
