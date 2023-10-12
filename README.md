@@ -1,2 +1,4 @@
 # Name Game 
-https://name-game-gang.onrender.com
+## Welcome to our Repo!
+## Link to our current working deployment
+  https://name-game-gang.onrender.com
