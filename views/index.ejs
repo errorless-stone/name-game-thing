@@ -1,48 +1,62 @@
 <%- include('partials/html-head') %>
 
-
-  <body class="container-fluid">
-
-
-    <div class="row">
-      <div class="col-md-6">
-        <h1>Update Profile</h1>
-
-        <%= console.log(profileData) %>
-
-          <% for (var i=0; i< profileData.length; i++ ) { %>
-            <form method="POST">
-              <input type="hidden" id="devId" name="devId" value="<%= profileData[i]._id %>"></input>
-              <input type="text" id="devName" name="devName" value="<%= profileData[i].devName %>"></input>
-              <p>
-                <%= profileData[i].devName %>'s GitHub = <%= profileData[i].devGitHub %>
-              </p>
-
-              <button class="btn btn-primary" type="submit" formaction="/updateProfile">Edit Name</button>
-              <button class="btn btn-warning" type="submit" formaction="/deleteProfile">Delete Name </button>
-
-            </form>
-            <br />
-            <% } %>
+  <div class="container mt-5">
+    <div class="row" <% cards.forEach(card=> { %>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <img src="<%= profileData[i].img %>" class="card-img-top" alt="<%= card.title %>">
+          <div class="card-body">
+            <p class="card-text">
+              <%= profileData[i].name %>
+            </p>
+          </div>
+        </div>
       </div>
+      <% }); %>
 
 
-      <div class="col-md-6">
-
-        <h2> Create new Account</h2>
-
-        <form action="/insertProfile" method="POST">
-
-          <input type="text" id="newDevName" name="newDevName" placeholder="Enter in name"></input>
-
-          <button class="btn btn-primary" type="submit">Add</button>
-
-        </form>
-
-      </div>
-    </div>
+        <body class="container-fluid">
 
 
-  </body>
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Update Profile</h1>
 
-  </html>
+              <%= console.log(profileData) %>
+
+                <% for (var i=0; i< profileData.length; i++ ) { %>
+                  <form method="POST">
+                    <input type="hidden" id="devId" name="devId" value="<%= profileData[i]._id %>"></input>
+                    <input type="text" id="devName" name="devName" value="<%= profileData[i].devName %>"></input>
+                    <p>
+                      <%= profileData[i].devName %>'s GitHub = <%= profileData[i].devGitHub %>
+                    </p>
+
+                    <button class="btn btn-primary" type="submit" formaction="/updateProfile">Edit Name</button>
+                    <button class="btn btn-warning" type="submit" formaction="/deleteProfile">Delete Name </button>
+
+                  </form>
+                  <br />
+                  <% } %>
+            </div>
+
+
+            <div class="col-md-6">
+
+              <h2> Create new Account</h2>
+
+              <form action="/insertProfile" method="POST">
+
+                <input type="text" id="newDevName" name="newDevName" placeholder="Enter in name"></input>
+
+                <button class="btn btn-primary" type="submit">Add</button>
+
+              </form>
+
+            </div>
+          </div>
+
+
+        </body>
+
+        </html>
