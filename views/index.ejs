@@ -5,33 +5,47 @@
 
           <div class="row">
             <div class="col-md-6">
-              <h1>Update Profile</h1>
+              <h1>The Name Game </h1>
 
               <%= console.log(profileData) %>
 
                 <% for (var i=0; i< profileData.length; i++ ) { %>
                   <div class="card">
+                    <img class="card-img-top" src="<%= profileData[i].image %>" alt="Card image">
                     <div class="card-body"><%= profileData[i].name %></div>
                   </div>
-                      <%= profileData[i].name %>'s fact = <%= profileData[i].fact %>
+                    
                     </p>
-
-                    <button class="btn btn-primary" type="submit" formaction="/updateProfile">Edit Name</button>
-                    <button class="btn btn-warning" type="submit" formaction="/deleteProfile">Delete Name </button>
 
                   </form>
                   <br />
                   <% } %>
+
+
+
+
+
+                  <% for (var i=0; i< profileData.length; i++ ) { %>
+                    <div class="card">
+                      <div class="card-body"><%= profileData[i].fact %></div>
+                    </div>
+                      
+                      </p>
+  
+                    </form>
+                    <br />
+                    <% } %>
             </div>
 
 
             <div class="col-md-6">
 
-              <h2> Create new Account</h2>
+              <h2> Add New Professor</h2>
 
               <form action="/insertProfile" method="POST">
 
-                <input type="text" id="newDevName" name="newDevName" placeholder="Enter in name"></input>
+                <input type="text" id="newDevName" name="name" placeholder="Enter in name"></input>
+                <input type="text" id="newDevName" name="name" placeholder="Enter in fact"></input>
 
                 <button class="btn btn-primary" type="submit">Add</button>
 
