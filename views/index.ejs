@@ -1,23 +1,5 @@
 <%- include('partials/html-head') %>
 
-
-
-<%= console.log(profileData) %> 
-
-
-  <div class="container mt-5">
-    <% for (var i=0; i< profileData.length; i++ ) { %>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-            <p class="card-text">
-              <%= profileData[i].name %>
-            </p>
-          </div>
-        </div>
-      </div>
-      <% }); %>
-
-
         <body class="container-fluid">
 
 
@@ -28,11 +10,10 @@
               <%= console.log(profileData) %>
 
                 <% for (var i=0; i< profileData.length; i++ ) { %>
-                  <form method="POST">
-                    <input type="hidden" id="devId" name="devId" value="<%= profileData[i]._id %>"></input>
-                    <input type="text" id="devName" name="devName" value="<%= profileData[i].devName %>"></input>
-                    <p>
-                      <%= profileData[i].devName %>'s GitHub = <%= profileData[i].devGitHub %>
+                  <div class="card">
+                    <div class="card-body"><%= profileData[i].name %></div>
+                  </div>
+                      <%= profileData[i].name %>'s fact = <%= profileData[i].fact %>
                     </p>
 
                     <button class="btn btn-primary" type="submit" formaction="/updateProfile">Edit Name</button>
