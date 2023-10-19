@@ -22,7 +22,7 @@ const client = new MongoClient(uri, {
 app.get('/', async (req, res) => {
 
   client.connect;
-  let mongoResult = await client.db("Papa-Parade-Parrot").collection("ProjectOne").find().toArray();
+  let mongoResult = await client.db("Name-Game-Data").collection("Professor-Info").find().toArray();
 
   console.log(mongoResult);
 
@@ -36,15 +36,15 @@ app.post('/updateProfile', async (req, res) => {
   try {
     //get the new dev name
     console.log("body: ", req.body)
-    console.log("user Name: ", req.body.devName)
+    console.log("user Name: ", req.body.name)
 
     client.connect;
-    const collection = client.db("Papa-Parade-Parrot").collection("ProjectOne");
+    const collection = client.db("Name-Game-Data").collection("Professor-Info");
 
     // put it into mongo
     let result = await collection.findOneAndUpdate(
-      { _id: new ObjectId(req.body.devId) },
-      { $set: { devName: req.body.devName } })
+      { _id: new ObjectId(req.body._id) },
+      { $set: { devName: req.body.name } })
       .then(result => {
         console.log(result);
         res.redirect('/');
@@ -63,10 +63,10 @@ app.post('/insertProfile', async (req, res) => {
   try {
     //get the new dev name
     console.log("body: ", req.body)
-    console.log("user Name: ", req.body.devName)
+    console.log("user Name: ", req.body.name)
 
     client.connect;
-    const collection = client.db("Papa-Parade-Parrot").collection("ProjectOne");
+    const collection = client.db("Name-Game-Data").collection("Professor-Info");
 
     // put it into mongo
     let result = await collection.insertOne(
@@ -89,14 +89,14 @@ app.post('/deleteProfile', async (req, res) => {
   try {
     //get the new dev name
     console.log("body: ", req.body)
-    console.log("user Name: ", req.body.devName)
+    console.log("user Name: ", req.body.name)
 
     client.connect;
-    const collection = client.db("Papa-Parade-Parrot").collection("ProjectOne");
+    const collection = client.db("Name-Game-Data").collection("Professor-Info");
 
     // put it into mongo
     let result = await collection.findOneAndDelete(
-      { _id: new ObjectId(req.body.devId) })
+      { _id: new ObjectId(req.body._id) })
       .then(result => {
         console.log(result);
         res.redirect('/');
