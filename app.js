@@ -22,7 +22,7 @@ const client = new MongoClient(uri, {
 app.get('/', async (req, res) => {
 
   client.connect;
-  let mongoResult = await client.db("Name-Game-Data").collection("Professor-info").find().toArray();
+  let mongoResult = await client.db("Name-Game-Data").collection("Professor-Info").find().toArray();
 
   console.log(mongoResult);
 
@@ -39,7 +39,7 @@ app.post('/updateProfile', async (req, res) => {
     console.log("user Name: ", req.body.name)
 
     client.connect;
-    const collection = client.db("Name-Game-Data").collection("Professor-info");
+    const collection = client.db("Name-Game-Data").collection("Professor-Info");
 
     // put it into mongo
     let result = await collection.findOneAndUpdate(
@@ -66,7 +66,7 @@ app.post('/insertProfile', async (req, res) => {
     console.log("user Name: ", req.body.name)
 
     client.connect;
-    const collection = client.db("Name-Game-Data").collection("Professor-info");
+    const collection = client.db("Name-Game-Data").collection("Professor-Info");
 
     // put it into mongo
     let result = await collection.insertOne(
@@ -92,7 +92,7 @@ app.post('/deleteProfile', async (req, res) => {
     console.log("user Name: ", req.body.name)
 
     client.connect;
-    const collection = client.db("Name-Game-Data").collection("Professor-info");
+    const collection = client.db("Name-Game-Data").collection("Professor-Info");
 
     // put it into mongo
     let result = await collection.findOneAndDelete(
