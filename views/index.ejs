@@ -1,16 +1,25 @@
 <%- include('partials/html-head') %>
 
+
+          <style>
+            .card-img-top{
+              max-width:50;
+              min-width:30;
+            }
+          </style>
+
+          
         <body class="container-fluid">
 
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4"></div>
               <h1>The Name Game </h1>
 
               <%= console.log(profileData) %>
 
                 <% for (var i=0; i< profileData.length; i++ ) { %>
-                  <div class="card">
+                  <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                     <img class="card-img-top" src="<%= profileData[i].image %>" alt="Card image">
                     <div class="card-body"><%= profileData[i].name %></div>
                   </div>
@@ -26,7 +35,6 @@
 
 
                   <% for (var i=0; i< profileData.length; i++ ) { %>
-                    <div class="col-md-6 col-lg-4">
                     <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                       <div class="card-body"><%= profileData[i].fact %></div>
                     </div>
