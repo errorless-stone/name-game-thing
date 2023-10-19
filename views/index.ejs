@@ -1,11 +1,14 @@
 <%- include('partials/html-head') %>
 
+
+
+<%= console.log(profileData) %> 
+
+
   <div class="container mt-5">
-    <div class="row" <% profileData.forEach(profileData=> { %>
+    <% for (var i=0; i< profileData.length; i++ ) { %>
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card">
-          <img src="<%= profileData[i].img %>" class="card-img-top" alt="<%= card.title %>">
-          <div class="card-body">
             <p class="card-text">
               <%= profileData[i].name %>
             </p>

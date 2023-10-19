@@ -44,7 +44,7 @@ app.post('/updateProfile', async (req, res) => {
     // put it into mongo
     let result = await collection.findOneAndUpdate(
       { _id: new ObjectId(req.body._id) },
-      { $set: { devName: req.body.name } })
+      { $set: { name: req.body.name } })
       .then(result => {
         console.log(result);
         res.redirect('/');
@@ -70,7 +70,7 @@ app.post('/insertProfile', async (req, res) => {
 
     // put it into mongo
     let result = await collection.insertOne(
-      { devName: req.body.newDevName })
+      { name: req.body.name })
       .then(result => {
         console.log(result);
         res.redirect('/');
