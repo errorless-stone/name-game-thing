@@ -63,7 +63,8 @@ app.post('/insertProfile', async (req, res) => {
   try {
     //get the new dev name
     console.log("body: ", req.body)
-    console.log("user Name: ", req.body.name)
+    console.log("name: ", req.body.name)
+    
 
     client.connect;
     const collection = client.db("Name-Game-Data").collection("Professor-Info");

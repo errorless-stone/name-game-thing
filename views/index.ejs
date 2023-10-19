@@ -26,7 +26,8 @@
 
 
                   <% for (var i=0; i< profileData.length; i++ ) { %>
-                    <div class="card">
+                    <div class="col-md-6 col-lg-4">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                       <div class="card-body"><%= profileData[i].fact %></div>
                     </div>
                       
@@ -35,6 +36,7 @@
                     </form>
                     <br />
                     <% } %>
+                  </div>
             </div>
 
 
