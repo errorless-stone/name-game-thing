@@ -31,63 +31,39 @@
 
   <h1>The Name Game </h1>
 
-  <div class="row">
-    <div class="col-lg-4 mb-3 d-flex align-items-stretch"></div>
+  <div class="container-fluid">
 
+  <div class="row justify-content-center">
+    
+            <% for (var i=0; i< 1; i++ ) { %>
+          <div class="col-md-2" id="<%=profileData[i].name%>" >
+            <img class="card-img-top" src="<%=profileData[i].image %>" alt="Card image">
+            <div class="card-body">
+              <%= profileData[i].name %>
+            </div>
+          </div>
+  
+        
+          <% } %>
+  
+  
+  
+  
+  
+            
+    </div>
 
-    <%= console.log(profileData) %>
-
-      <% for (var i=0; i< profileData.length; i++ ) { %>
+    <div class = "row justify-content-center">
+      <% for (var i=0; i< 3; i++ ) { %>
         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-          <img class="card-img-top" src="<%= profileData[i].image %>" alt="Card image">
           <div class="card-body">
-            <%= profileData[i].name %>
+            <%= profileData[i].fact %>
           </div>
         </div>
-
-        </p>
-
-        </form>
-        <br />
         <% } %>
-
-
-
-
-
-          <% for (var i=0; i< profileData.length; i++ ) { %>
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-              <div class="card-body">
-                <%= profileData[i].fact %>
-              </div>
-            </div>
-
-            </p>
-
-            </form>
-            <br />
-            <% } %>
-  </div>
-  </div>
-
-
-  <div class="row">
-
-    <h2> Add New Professor</h2>
-
-    <form action="/insertProfile" method="POST">
-
-      <input type="text" id="newDevName" name="name" placeholder="Enter in name"></input>
-      <input type="text" id="newDevName" name="fact" placeholder="Enter in fact"></input>
-      <input type="text" id="newDevName" name="image" placeholder="Enter in image link"></input>
-
-      <button class="btn btn-primary" type="submit">Add</button>
-
-    </form>
+    </div>
 
   </div>
-  </div>
-
 
   </body>
 
