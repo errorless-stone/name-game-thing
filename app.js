@@ -19,6 +19,8 @@ const client = new MongoClient(uri, {
   }
 });
 
+//Level One Page
+
 app.get('/', async (req, res) => {
 
   client.connect;
@@ -31,84 +33,32 @@ app.get('/', async (req, res) => {
   })
 })
 
-app.post('/updateProfile', async (req, res) => {
+//Level Two Page
 
-  try {
-    //get the new dev name
-    console.log("body: ", req.body)
-    console.log("user Name: ", req.body.name)
+app.get('/levelTwo', async (req, res) => {
 
-    client.connect;
-    const collection = client.db("Name-Game-Data").collection("Professor-Info");
+  client.connect;
+  let mongoResult = await client.db("Name-Game-Data").collection("Professor-Info").find().toArray();
 
-    // put it into mongo
-    let result = await collection.findOneAndUpdate(
-      { _id: new ObjectId(req.body._id) },
-      { $set: { name: req.body.name } })
-      .then(result => {
-        console.log(result);
-        res.redirect('/');
-      })
-      .catch(error => console.error(error))
+  console.log(mongoResult);
 
-
-  }
-  finally {
-    //client.close()
-  }
+  res.render('index', {
+    profileData: mongoResult
+  })
 })
 
-app.post('/insertProfile', async (req, res) => {
+//Level Three Page
 
-  try {
-    //get the new dev name
-    console.log("body: ", req.body)
-    console.log("name: ", req.body.name)
-    
+app.get('/levelThree', async (req, res) => {
 
-    client.connect;
-    const collection = client.db("Name-Game-Data").collection("Professor-Info");
+  client.connect;
+  let mongoResult = await client.db("Name-Game-Data").collection("Professor-Info").find().toArray();
 
-    // put it into mongo
-    let result = await collection.insertOne(
-      { name: req.body.name })
-      .then(result => {
-        console.log(result);
-        res.redirect('/');
-      })
-      .catch(error => console.error(error))
+  console.log(mongoResult);
 
-
-  }
-  finally {
-    //client.close()
-  }
-})
-
-app.post('/deleteProfile', async (req, res) => {
-
-  try {
-    //get the new dev name
-    console.log("body: ", req.body)
-    console.log("user Name: ", req.body.name)
-
-    client.connect;
-    const collection = client.db("Name-Game-Data").collection("Professor-Info");
-
-    // put it into mongo
-    let result = await collection.findOneAndDelete(
-      { _id: new ObjectId(req.body._id) })
-      .then(result => {
-        console.log(result);
-        res.redirect('/');
-      })
-      .catch(error => console.error(error))
-
-
-  }
-  finally {
-    //client.close()
-  }
+  res.render('index', {
+    profileData: mongoResult
+  })
 })
 
 app.listen(port, () => console.log(`Server is running...on ${port}`));
