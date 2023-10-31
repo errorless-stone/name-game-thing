@@ -10,6 +10,10 @@ const uri = process.env.MONGO_URI;
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const path = require('path')
+app.use('/public', express.static(path.join(__dirname, 'public')))
+// app.use('/public', express.static('public'));
+
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
