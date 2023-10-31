@@ -53,9 +53,9 @@
             
     </div>
 
-    <div class = "row justify-content-center">
+    <div class="btn-group" role="group" aria-label="Basic example"></div>
       <% for (var i=0; i< 3; i++ ) { %>
-        <button id="<%= profileData[i].name %>" onclick="alert('The request has been approved!');"><%= profileData[i].fact %></button>
+        <button type="button" id="<%= profileData[i]._id %>" onclick="alert('The request has been approved!');"><%= profileData[i].fact %></button>
           </div>
         </div>
         <% } %>
