@@ -1,20 +1,26 @@
 <%- include('partials/html-head') %>
 
+<script>
+const clientData = <%- JSON.stringify(profileData) %>;
+</script>
+
   <h1>The Name Game </h1>
 
   <div class="container-fluid">
+
+    
 
   <div class="row justify-content-center">
     
             <% for (var i=0; i< 1; i++ ) { %>
           <div class="col-md-2" id="<%=profileData[i].name%>" >
-            <img class="card-img-top" src="<%=profileData[i].image %>" alt="Card image">
+            <img id="pic" class="pic card-img-top" src="<%=profileData[i].image %>" alt="Card image">
             <div class="card-body">
               <%= profileData[i].name %>
             </div>
           </div>
   
-        
+
           <% } %>
 
             
@@ -34,5 +40,7 @@
 
 <%- include('partials/script-libraries') %>
 <script src="public/scripts/nameGameScript.js"></script>
+
+
   </body>
   </html>
