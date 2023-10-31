@@ -1,0 +1,68 @@
+<%- include('partials/html-head') %>
+
+
+  <style>
+    * {
+      background-image: ('https://img.freepik.com/free-photo/abstract-luxury-plain-blur-grey-black-gradient-used-as-background-studio-wall-display-your-products_1258-63617.jpg');
+    }
+
+    p {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .card-img-top {
+      max-width: 50;
+      min-width: 30;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 30;
+      text-align: center;
+
+    }
+  </style>
+
+
+
+  <h1>The Name Game </h1>
+
+  <div class="container-fluid">
+
+  <div class="row justify-content-center">
+    
+            <% for (var i=0; i< 1; i++ ) { %>
+          <div class="col-md-2" id="<%=profileData[i].name%>" >
+            <img class="card-img-top" src="<%=profileData[i].image %>" alt="Card image">
+            <div class="card-body">
+              <%= profileData[i].name %>
+            </div>
+          </div>
+  
+        
+          <% } %>
+  
+  
+  
+  
+  
+            
+    </div>
+
+    <div class = "row justify-content-center">
+      <% for (var i=0; i< 3; i++ ) { %>
+        <button class="w3-button w3-hover-black" id= "<%= profileData[i].name %>" onclick="alert('The request has been approved!');"><%= profileData[i].fact %></button>
+          </div>
+        </div>
+        <% } %>
+    </div>
+
+  </div>
+
+  </body>
+
+  </html>
