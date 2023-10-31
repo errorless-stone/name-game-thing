@@ -6,12 +6,9 @@
 
   <div class="row justify-content-center">
     
-            <% for (var i=0; i< 1; i++ ) { %>
+               <% for (var i=0; i< 1; i++ ) { %>
           <div class="col-md-2" id="<%=profileData[i].name%>" >
-            <img class="card-img-top" src="<%=profileData[i].image %>" alt="Card image">
-            <div class="card-body">
-              <%= profileData[i].name %>
-            </div>
+            <img id="pic" class="card-img-top" src="<%=profileData[i].image %>" alt="Card image">
           </div>
   
         
@@ -20,19 +17,13 @@
             
     </div>
 
-    <div class = "row justify-content-center">
+    <div class = "row justify-content-center" id="button-row">
       <% for (var i=0; i< 3; i++ ) { %>
-        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <%= profileData[i].fact %>
-          </div>
-        </div>
+          <button type="button" class="btn btn-primary" style="max-width: 18rem"><%= profileData[i].name %></button>
         <% } %>
     </div>
 
+    <%- include('partials/script-libraries') %>
   </div>
-
-<%- include('partials/script-libraries') %>
-<script src="public/scripts/nameGameScript.js"></script>
   </body>
   </html>
