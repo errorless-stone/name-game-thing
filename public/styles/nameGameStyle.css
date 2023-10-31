@@ -1,0 +1,28 @@
+body {
+    background-color: aqua; 
+}
+
+* {
+    background-image: ('https://img.freepik.com/free-photo/abstract-luxury-plain-blur-grey-black-gradient-used-as-background-studio-wall-display-your-products_1258-63617.jpg');
+}
+
+p {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.card-img-top {
+    max-width: 50;
+    min-width: 30;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 30;
+    text-align: center;
+
+}
+
