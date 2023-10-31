@@ -55,7 +55,7 @@
 
     <div class = "row justify-content-center">
       <% for (var i=0; i< 3; i++ ) { %>
-        <button class="w3-button w3-hover-black" id= "<%= profileData[i].name %>" onclick="alert('The request has been approved!');"><%= profileData[i].fact %></button>
+        <button id="<%= profileData[i].name %>" onclick="alert('The request has been approved!');"><%= profileData[i].fact %></button>
           </div>
         </div>
         <% } %>
