@@ -16,7 +16,7 @@
 # Important Links
 ## Link to our current working deployment
   https://name-game-gang.onrender.com
-## Link to Wiki/Pages
+## About our Team
   https://github.com/errorless-stone/name-game-thing/wiki
 
 
