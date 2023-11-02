@@ -1,20 +1,16 @@
 $(function() {
     console.log( "ready!" );
 
-    // var randName = Math.floor(Math.random() * profileData.length());
+    $("#pic").on("click", (e)=>{
+        console.log("clicky");
+        $("#pic").attr("src", clientData[Math.floor(Math.random()*clientData.length)].image)
+    }); 
 
 
-
-       //const clientData= <%=profileData %>
-
-    $("#pic").on("click", () => {
-
-        console.log("clicked");
-        console.log("clientData[1]");
-
-        
+    $.each(clientData, (key, value) => {
+    //   console.log(key, value);
+    //   console.log(value.image); 
     })
 });
-
 
 
