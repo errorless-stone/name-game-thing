@@ -4,8 +4,8 @@
     const clientData = <%- JSON.stringify(profileData) %>;
   </script>
 
-  <h1>The Name Game </h1>
-  <h2>What is the name of this professor?</h2>
+  <h1>The Name Game 3</h1>
+  <h2>What is a random fact about this professor?</h2>
 
   <div class="container-fluid">
 
@@ -24,7 +24,7 @@
 
     <div class = "row justify-content-center" id="button-row">
       <% for (var i=0; i< 3; i++ ) { %>
-          <button type="button" class="btn btn-primary" style="max-width: 18rem"><%= profileData[i].name %></button>
+          <button type="button" class="btn btn-primary" style="max-width: 18rem"><%= profileData[i].fact %></button>
         <% } %>
     </div>
 

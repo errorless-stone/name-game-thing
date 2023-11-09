@@ -5,7 +5,7 @@
   </script>
 
   <h1>The Name Game </h1>
-  <h2>What is the name of this professor?</h2>
+  <h2>What class has this professor taught?</h2>
 
   <div class="container-fluid">
 
@@ -24,7 +24,7 @@
 
     <div class = "row justify-content-center" id="button-row">
       <% for (var i=0; i< 3; i++ ) { %>
-          <button type="button" class="btn btn-primary" style="max-width: 18rem"><%= profileData[i].name %></button>
+          <button type="button" class="btn btn-primary" style="max-width: 18rem"><%= profileData[i].teach %></button>
         <% } %>
     </div>
 
