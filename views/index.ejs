@@ -2,6 +2,7 @@
 
   <script>
     const clientData = <%- JSON.stringify(profileData) %>;
+    console.log(clientData);
   </script>
 
   <h1>The Name Game </h1>
@@ -23,7 +24,7 @@
 
     <div class = "row justify-content-center" id="button-row">
       <% for (var i=0; i< 3; i++ ) { %>
-          <button type="button" class="btn btn-primary" style="max-width: 18rem"><%= profileData[i].name %></button>
+          <button id="aBUTTON" type="button" class="btn btn-primary" style="max-width: 18rem"><%= profileData[i].name %></button>
         <% } %>
     </div>
 
