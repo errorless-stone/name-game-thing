@@ -39,29 +39,31 @@ app.get('/', async (req, res) => {
 
 //Level Two Page
 
-app.get('/levelTwo', async (req, res) => {
+app.get('/leveltwo', async (req, res) => {
 
   client.connect;
   let mongoResult = await client.db("Name-Game-Data").collection("Professor-Info").find().toArray();
 
   console.log(mongoResult);
 
-  res.render('index', {
+  res.render('index2', {
     profileData: mongoResult
+    
   })
 })
 
 //Level Three Page
 
-app.get('/levelThree', async (req, res) => {
+app.get('/levelthree', async (req, res) => {
 
   client.connect;
   let mongoResult = await client.db("Name-Game-Data").collection("Professor-Info").find().toArray();
 
   console.log(mongoResult);
 
-  res.render('index', {
+  res.render('index3', {
     profileData: mongoResult
+    
   })
 })
 
