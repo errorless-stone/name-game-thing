@@ -12,25 +12,23 @@ $(function() {
     var randArray = [rightProfName, wrongProfName, wrongProfName2];
 
     //load three buttons. id=but1 but2 but3 
-    $(document).ready(function() {
-        for(i=0; i < 3; i++){
-            $('#button-box').append(
-                $(document.createElement('button')).prop({
-                    type: 'button',
-                    innerHTML: randArray[i],
-                    class: 'btn btn-primary guessButton',
-                    id: "button"+(i+1),
-                    style: "margin-right: 20px"
-                })
-            ); 
-        }
-    });
+     for(i=0; i < 3; i++){
+        $('#button-box').append(
+            $(document.createElement('button')).prop({
+                type: 'button',
+                innerHTML: randArray[i],
+                class: 'btn btn-primary guessButton',
+                id: "button"+(i+1),
+                style: "margin-right: 20px"
+            })
+        ); 
+     }
 
     console.log("rightProfName",rightProfName)
 
     $("#pic").attr("src", rightProf.image); 
 
-    $("button").on("click", (e)=>{
+    $(".guessButton").on("click", (e)=>{
         console.log("clicky");
         $("#pic").fadeOut(1000,function(){
             $("#pic").attr("src", rightProf.image); 
