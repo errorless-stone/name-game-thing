@@ -13,7 +13,7 @@ $(function() {
     
     //shuffling array for buttons
     function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
+        for (let i = array.length - 1; i >= 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [array[i], array[j]] = [array[j], array[i]];
         }
@@ -28,8 +28,18 @@ $(function() {
       correctProf = clientData[Math.floor(Math.random()*clientData.length)];
       wrongProf = clientData[Math.floor(Math.random()*clientData.length)];
       wrongProf2 = clientData[Math.floor(Math.random()*clientData.length)];
-      btnChoices = [correctProf.name, wrongProf.name, wrongProf2.name];
-      btnChoices = shuffleArray(btnChoices);
+      btnChoices = [correctProf.name];
+      while(btnChoices.includes(wrongProf.name)){
+        wrongProf = clientData[Math.floor(Math.random()*clientData.length)];
+      }
+      btnChoices.push(wrongProf.name);
+
+      while(btnChoices.includes(wrongProf2.name)){
+        wrongProf2 = clientData[Math.floor(Math.random()*clientData.length)];
+      }
+      btnChoices.push(wrongProf2.name);
+
+      shuffleArray(btnChoices);
     }
     
 
