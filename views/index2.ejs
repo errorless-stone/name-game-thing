@@ -1,35 +1,117 @@
 <%- include('partials/html-head') %>
 
   <script>
-    const clientData = <%- JSON.stringify(profileData) %>;
+    const clientData = <% - JSON.stringify(profileData) %>;
+    console.log(clientData);
   </script>
 
+  <!-- Navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand me-2" href="https://mdbgo.com/">
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/jac.svg"
+          height="100" alt="JAC team" loading="lazy" style="margin-top: -1px;" />
+      </a>
+
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
+        aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/users/errorless-stone/projects/1">The Name Game by JAC</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+
+        <div class="d-flex align-items-center">
+          <a class="btn btn-dark px-3" href="https://github.com/errorless-stone/name-game-thing/wiki#team-information" role="button">Meet The Team</a>
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+      <div class="d-flex align-items-center">
+        <a class="btn btn-dark px-3" href="https://github.com/errorless-stone/name-game-thing#readme" role="button">Our Mission</a>
+        ><i class="fab fa-github"></i
+      ></a>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Select which Level to Play!
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/">Level 1</a>
+        <a href="/leveltwo">Level 2</a>
+        <a href="/levelthree">Level 3</a>
+      </div>
+    </div>
+  </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+
+<script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  }
+  </script>
+
+<!-- Navbar -->
+
   <h1>The Name Game </h1>
-  <h2>What class has this professor taught?</h2>
+  <h2>What class does this professor teach?</h2>
+  <h3>Your Score = <span id="score"></h3>
 
   <div class="container-fluid">
 
-  <div class="row justify-content-center">
-    
-               <% for (var i=0; i< 1; i++ ) { %>
-          <div class="col-md-2" id="<%=profileData[i].name%>" >
-            <img id="pic" class="pic card-img-top" src="<%=profileData[i].image %>" alt="Card image">
-          </div>
-  
-        
-          <% } %>
+    <div class="row justify-content-center">
 
-            
-    </div>
+      <% for (var i=0; i< 1; i++ ) { %>
 
-    <div class = "row justify-content-center" id="button-row">
-      <% for (var i=0; i< 3; i++ ) { %>
-          <button type="button" class="btn btn-primary" style="max-width: 18rem"><%= profileData[i].teach %></button>
+        <div class="col-md-2" id="<%=profileData[i].name%>">
+          <img id="pic" class="pic card-img-top" src="<%=profileData[i].image %>" alt="The Name Game">
+        </div>
+
+
         <% } %>
+
+
     </div>
+
+  
+    <div class="row justify-content-center" id="button-row">
+        <div class="container-fluid d-flex justify-content-center" id="button-box">
+        </div>
+        <button id="btnOne" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"> </button>
+        <button id="btnTwo" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"></button>
+        <button id="btnThree" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"></button>
+    </div>
+  
 
     <%- include('partials/script-libraries') %>
-    <script src="public/scripts/nameGameScript.js"></script>
+      <script src="public/scripts/nameGameScript.js"></script>
   </div>
   </body>
+
   </html>
