@@ -1,7 +1,7 @@
 <%- include('partials/html-head') %>
 
   <script>
-    const clientData = <% - JSON.stringify(profileData) %>;
+    const clientData = <%- JSON.stringify(profileData) %>;
     console.log(clientData);
   </script>
 
@@ -11,10 +11,11 @@
     <!-- Container wrapper -->
     <div class="container">
       <!-- Navbar brand -->
-      <a class="navbar-brand me-2" href="https://github.com/errorless-stone/name-game-thing/tree/main">
+      <a class="navbar-brand me-2" href="https://github.com/errorless-stone/name-game-thing/tree/main"
+        target = "Repo">
         <img
-          src="https://cdn.worldvectorlogo.com/logos/jac.svg"
-          height="100" alt="JAC team" loading="lazy" style="margin-top: -1px;" />
+          src="public/image2vector.svg"
+          width="100px" alt="JAC team" loading="lazy" style="margin-top: -1px;" />
       </a>
 
       <!-- Toggle button -->
@@ -28,18 +29,18 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/users/errorless-stone/projects/1">The Name Game by JAC</a>
+            <a class="nav-link" style ="color: white;" href="https://github.com/users/errorless-stone/projects/1" target = "backlog">The Name Game by JAC</a>
           </li>
         </ul>
         <!-- Left links -->
 
         <div class="d-flex align-items-center">
-          <a class="btn btn-dark px-3" href="https://github.com/errorless-stone/name-game-thing/wiki#team-information" role="button">Meet The Team</a>
+          <a class="btn btn-dark px-3" target = "wikiHome" href="https://github.com/errorless-stone/name-game-thing/wiki#team-information" role="button">Meet The Team</a>
           ><i class="fab fa-github"></i
         ></a>
       </div>
       <div class="d-flex align-items-center">
-        <a class="btn btn-dark px-3" href="https://github.com/errorless-stone/name-game-thing#readme" role="button">Our Mission</a>
+        <a class="btn btn-dark px-3" target = "mission" href="https://github.com/errorless-stone/name-game-thing#readme" role="button">Our Mission</a>
         ><i class="fab fa-github"></i
       ></a>
     </div>
@@ -79,34 +80,54 @@
 
 <!-- Navbar -->
 
-  <h1>The Name Game </h1>
-  <h2>What is the name of this professor?</h2>
-  <h3>Your Score = <span id="score"></h3>
-
-  <div class="container-fluid">
-
-    <div class="row justify-content-center">
-
-      <% for (var i=0; i< 1; i++ ) { %>
-
-        <div class="col-md-2" id="<%=profileData[i].name%>">
-          <img id="pic" class="pic card-img-top" src="<%=profileData[i].image %>" alt="The Name Game">
+<div class="area" >
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
+  
+    <div class="container-fluid" id="game-box">
+      <h1>The Name Game </h1>
+      <h2>What is the name of this professor?</h2>
+      <h3>Your Score = <span id="score"></h3>
+    
+        
+        <div class="row justify-content-center">
+    
+          <% for (var i=0; i< 1; i++ ) { %>
+    
+            <div class="col-md-2" id="<%=profileData[i].name%>">
+              <img id="pic" class="pic card-img-top" src="<%=profileData[i].image %>" alt="The Name Game">
+            </div>
+    
+    
+          <% } %>
+    
+    
         </div>
-
-
-        <% } %>
-
-
-    </div>
-
-
-    <div class="row justify-content-center" id="button-row">
-        <div class="container-fluid d-flex justify-content-center" id="button-box">
+    
+    
+        <div class="row justify-content-center" id="button-row">
+          <div class="container-fluid d-flex justify-content-center" id="button-box">
+          </div>
+          <button id="btnOne" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"> </button>
+          <button id="btnTwo" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"></button>
+          <button id="btnThree" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"></button>
         </div>
-        <button id="btnOne" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"> </button>
-        <button id="btnTwo" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"></button>
-        <button id="btnThree" type="button" class="guessButton btn btn-primary" style="max-width: 18rem"></button>
-    </div>
+      </div>
+  </ul>
+</div >
+
+
   
 
     <%- include('partials/script-libraries') %>
@@ -114,4 +135,4 @@
   </div>
   </body>
 
-  </html>
+</html>
