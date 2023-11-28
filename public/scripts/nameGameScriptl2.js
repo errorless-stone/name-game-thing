@@ -84,7 +84,7 @@ $(function() {
        var pickedProfTeach = e.target.getAttribute('value'); 
        // alert(e.target.getAttribute('value')); 
        
-       if(correctProf.teach === pickedProfTeach && clientData.length < 3)
+       if(correctProf.teach === pickedProfTeach && clientData.length > 3)
          {
            //add one to score
            score++ 

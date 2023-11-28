@@ -85,7 +85,7 @@ $(function() {
        var pickedProfFact = e.target.getAttribute('value'); 
        // alert(e.target.getAttribute('value')); 
        
-       if(correctProf.fact === pickedProfFact && clientData.length < 3)
+       if(correctProf.fact === pickedProfFact && clientData.length > 3)
          {
            //add one to score
            score++ 
@@ -94,7 +94,7 @@ $(function() {
            $("#score").text(score); 
 
            var filtered = clientData.filter((item)=> {
-            return item.teach != pickedProfTeach;
+            return item.fact != pickedProfFact;
           })
   
           clientData = filtered;

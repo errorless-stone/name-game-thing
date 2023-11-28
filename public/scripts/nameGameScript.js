@@ -77,7 +77,7 @@ $(function() {
      // alert(e.target.getAttribute('value')); 
       
      
-     if(correctProf.name === pickedProfName && clientData.length < 3)
+     if(correctProf.name === pickedProfName && clientData.length > 3)
        {
          //add one to score
          score++ 
