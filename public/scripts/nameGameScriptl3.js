@@ -105,8 +105,15 @@ $(function() {
          
          }
        else{
-         $(pickedProfId).attr("disabled", true);
-       }
+      //subract score
+      score--
+
+      //update score on page  
+      $("#score").text(score);
+
+       $(pickedProfId).attr("disabled", true);
+       
+      }
        
      }); 
      
