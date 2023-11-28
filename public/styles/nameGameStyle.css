@@ -261,3 +261,8 @@ h1 {
     display: block;
   }
 
+  .guessButton:focus{
+    outline:none;
+    box-shadow:none;
+  }
+

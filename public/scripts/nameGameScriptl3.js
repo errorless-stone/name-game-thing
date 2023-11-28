@@ -61,9 +61,9 @@ $(function() {
   
   
     function buildChoiceButtons(){ 
-      $("#btnOne").text(btnChoices[0]).val(btnChoices[0]);
-      $("#btnTwo").text(btnChoices[1]).val(btnChoices[1]);
-      $("#btnThree").text(btnChoices[2]).val(btnChoices[2]);
+      $("#btnOne").text(btnChoices[0]).val(btnChoices[0]).css("background-color","#0b5ed7");
+      $("#btnTwo").text(btnChoices[1]).val(btnChoices[1]).css("background-color","#0b5ed7");
+      $("#btnThree").text(btnChoices[2]).val(btnChoices[2]).css("background-color","#0b5ed7");
     }
     
     function loadPic(){
@@ -85,16 +85,27 @@ $(function() {
        var pickedProfFact = e.target.getAttribute('value'); 
        // alert(e.target.getAttribute('value')); 
        
-       if(correctProf.fact === pickedProfFact)
+       if(correctProf.fact === pickedProfFact && clientData.length > 3)
          {
            //add one to score
            score++ 
          
            //update score on page  
            $("#score").text(score); 
+
+           var filtered = clientData.filter((item)=> {
+            return item.fact != pickedProfFact;
+          })
+  
+          clientData = filtered;
+  
+           console.log(clientData);
            
            //load new variables, pic, & buttons
-           play();
+           $("#pic").fadeOut(200,function(){
+            play();
+            $("#pic").fadeIn();
+           });
            
            //turn on all buttons
            $('.guessButton').attr('disabled', false);
@@ -112,7 +123,7 @@ $(function() {
       $("#score").text(score);
 
        $(pickedProfId).attr("disabled", true);
-       
+       $(pickedProfId).css("background-color","red");
       }
        
      }); 
