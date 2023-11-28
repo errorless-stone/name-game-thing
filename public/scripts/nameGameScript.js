@@ -96,8 +96,16 @@ $(function() {
        
 
        }
-     else{
+     else {
+
+      //subract score
+      score--
+
+      //update score on page  
+      $("#score").text(score);
+
        $(pickedProfId).attr("disabled", true);
+      
      }
     
 
