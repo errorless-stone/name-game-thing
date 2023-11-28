@@ -18,6 +18,21 @@ $(function() {
           [array[i], array[j]] = [array[j], array[i]];
         }
       }
+
+      function showCongratsPopup() {
+        document.getElementById('congratsOverlay').style.display = 'flex';
+      }
+      
+      //function goToNextLevel() {
+       // response.sendRedirect("index3.ejs");;
+       // alert('Going to the next level!');
+      //}
+      
+      // Call the showCongratsPopup function when the page loads (for demonstration purposes)
+      window.onload = function () {
+        showCongratsPopup();
+      };
+  
   
   
   
@@ -82,6 +97,10 @@ $(function() {
            
            //turn on all buttons
            $('.guessButton').attr('disabled', false);
+
+           if (score === 15) {
+            showCongratsPopup();
+         }
          
          }
        else{
