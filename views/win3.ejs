@@ -1,0 +1,107 @@
+<%- include('partials/html-head') %>
+
+  <!-- Navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand me-2" href="https://github.com/errorless-stone/name-game-thing/tree/main"
+        target = "Repo">
+        <img
+          src="public/image2vector.svg"
+          width="100px" alt="JAC team" loading="lazy" style="margin-top: -1px;" />
+      </a>
+
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
+        aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style ="color: white;" href="https://github.com/users/errorless-stone/projects/1" target = "backlog">The Name Game by JAC</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+
+        <div class="d-flex align-items-center">
+          <a class="btn btn-dark px-3" target = "wikiHome" href="https://github.com/errorless-stone/name-game-thing/wiki#team-information" role="button">Meet The Team</a>
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+      <div class="d-flex align-items-center">
+        <a class="btn btn-dark px-3" target = "mission" href="https://github.com/errorless-stone/name-game-thing#readme" role="button">Our Mission</a>
+        ><i class="fab fa-github"></i
+      ></a>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Select which Level to Play!
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/">Level 1</a>
+        <a href="/leveltwo">Level 2</a>
+        <a href="/levelthree">Level 3</a>
+      </div>
+    </div>
+  </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+
+<script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  }
+  </script>
+
+<!-- Navbar -->
+
+<div class="area" >
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
+  
+    <div class="overlay" id="congratsOverlay">
+      <div class="popup">
+        <h2>Congratulations! You've Beat Level 3!</h2>
+        <div class="input-section">
+          <label for="phoneNumber">Enter your phone number to share results with friends:</label>
+          <input type="tel" id="phoneNumber" placeholder="Enter your phone number to share results with friends" />
+        </div>
+        <div class="button-section">
+        <button><a href="https://name-game-gang.onrender.com/">Go Back To Level 1</a></button>
+
+        </div>
+      </div>
+    </div>
+</body>
+</html>

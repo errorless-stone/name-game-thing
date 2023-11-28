@@ -88,3 +88,17 @@ app.get('/levelthree', async (req, res) => {
 })
 
 app.listen(port, () => console.log(`Server is running...on ${port}`));
+
+//YOU WIN!!!!
+
+app.get('/youwin1', async (req, res) => {
+  res.render('win1')
+})
+
+app.get('/youwin2', async (req, res) => {
+  res.render('win2')
+})
+
+app.get('/youwin3', async (req, res) => {
+  res.render('win3') 
+})
