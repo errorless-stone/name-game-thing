@@ -85,13 +85,21 @@ $(function() {
        var pickedProfFact = e.target.getAttribute('value'); 
        // alert(e.target.getAttribute('value')); 
        
-       if(correctProf.fact === pickedProfFact)
+       if(correctProf.fact === pickedProfFact && clientData.length < 3)
          {
            //add one to score
            score++ 
          
            //update score on page  
            $("#score").text(score); 
+
+           var filtered = clientData.filter((item)=> {
+            return item.teach != pickedProfTeach;
+          })
+  
+          clientData = filtered;
+  
+           console.log(clientData);
            
            //load new variables, pic, & buttons
            $("#pic").fadeOut(200,function(){
