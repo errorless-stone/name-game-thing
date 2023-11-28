@@ -18,9 +18,14 @@ $(function() {
       }
     }
 
-    function showCongratsPopup() {
-      document.getElementById('congratsOverlay').style.display = 'flex';
-    }
+    const winPopup = new Popup({
+      id: "my-popup",
+      title: "YOU BEAT LEVEL 1!!!",
+      content: `
+      Share your win on {a-https://twitter.com/intent/tweet?text=I%20just%20beat%20level%20one%20of%20JACs%20Name%20Game!!!}[Twitter]
+      Move on to the next {a-https://name-game-gang.onrender.com/leveltwo}[Level]
+      `,
+  });
     
 
     //function goToNextLevel() {
@@ -103,8 +108,8 @@ $(function() {
          //turn on all buttons
          $('.guessButton').attr('disabled', false);
        
-         if (score === 15) {
-          showCongratsPopup();
+         if (score === 9 && clientData.length > 3) {
+          winPopup.show();
        }
        
 
@@ -118,6 +123,7 @@ $(function() {
       $("#score").text(score);
       $(pickedProfId).attr("disabled", true);
       $(pickedProfId).css("background-color","red");
+
       
      }
     

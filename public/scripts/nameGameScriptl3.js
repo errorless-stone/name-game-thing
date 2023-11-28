@@ -10,7 +10,6 @@ $(function() {
     let correctProf, wrongProf, wrongProf2 = " "; 
     let btnChoices = []; 
     
-    
     //shuffling array for buttons
     function shuffleArray(array) {
         for (let i = array.length - 1; i >= 0; i--) {
@@ -19,6 +18,14 @@ $(function() {
         }
       }
 
+      const winPopup = new Popup({
+        id: "my-popup",
+        title: "YOU BEAT LEVEL 3!!!",
+        content: `
+        Share your win on {a-https://twitter.com/intent/tweet?text=I%20just%20beat%20level%20three%20of%20JACs%20Name%20Game!!!}[Twitter]
+        Go back to {a-https://name-game-gang.onrender.com/}[Level One]
+        `,
+    });
 
       function showCongratsPopup() {
         document.getElementById('congratsOverlay').style.display = 'flex';
@@ -110,9 +117,10 @@ $(function() {
            //turn on all buttons
            $('.guessButton').attr('disabled', false);
 
-           if (score === 15) {
-            showCongratsPopup();
+           if (score === 9 && clientData.length > 3) {
+            winPopup.show();
          }
+         
          
          }
        else{
